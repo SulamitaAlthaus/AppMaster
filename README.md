@@ -36,7 +36,7 @@ $ npm install
 #### Execute a aplicação em modo de desenvolvimento
 $ npm dev
 
-#### O servidor iniciará na porta:8081 ou a definida por vpcê nas variaves de ambiente
+#### O servidor iniciará na porta:8081 ou a definida por você nas variaves de ambiente
 
 ### Tecnologias
 
