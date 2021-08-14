@@ -7,7 +7,7 @@ const memoryCache = cache.caching({ store: 'memory', ttl: 21600})
 const server = express();
 
 server.get("/", (req, res) => {
-    return res.send("Pesquise um heroi usando '/search?q={parametro} ou /hero/{slug}");
+    return res.send("Pesquise um heroi usando '/search?q={parametro}' ou '/hero/{slug}'");
 });
 
 async function getCache(){
@@ -80,7 +80,7 @@ server.get("/hero/:slug", async (req, res) => {
     }
 });
 
-PORT = process.env.PORT || 8080
+PORT = process.env.PORT || 8081;
 server.listen(PORT, () => {
     console.log("Servidor rodando")
-})
+});
