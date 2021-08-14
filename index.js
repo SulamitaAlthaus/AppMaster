@@ -7,7 +7,7 @@ const memoryCache = cache.caching({ store: 'memory', ttl: 21600})
 const server = express();
 
 server.get("/", (req, res) => {
-    return res.send("Pesquise um heroi usando 'search/name'");
+    return res.send("Pesquise um heroi usando '/search?q={parametro} ou /hero/{slug}");
 });
 
 async function getCache(){
@@ -53,7 +53,7 @@ server.get("/search", async (req, res) => {
     }
 
     const response = await searchHero(teste)
-    
+
     if (response.length === 0){
         return res.status(204).send()
     }
@@ -80,6 +80,7 @@ server.get("/hero/:slug", async (req, res) => {
     }
 });
 
-server.listen(3333, () => {
- console.log('SERVIDOR ONLINE');
-});
+PORT = process.env.PORT || 8080
+server.listen(PORT, () => {
+    console.log("Servidor rodando")
+})
